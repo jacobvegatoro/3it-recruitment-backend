@@ -10,30 +10,35 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-//import com.tresit.microservicios.commons.recruitment.models.entity.Pregunta;
+//import com.tresit.recruitment.pregunta.model.entity.Pregunta;
+
+/**
+ * Si al momento de crear una "respuesta" 
+ * debemos relacionarla a su Pregunta original
+ * 
+ * debemos relacionarla? Pregunta-<Respuesta
+ *
+ */
 
 @Entity
-@Table(name="respuesta")
+@Table(name="respuestas")
 public class Respuesta {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	
+	private Long id;
 	private String detalle;
 	private Long puntaje;
-	
-	//relation Pregunta-<Respuesta
+	/*relation Pregunta-<Respuesta
 	@JsonIgnoreProperties(value = {"respuesta"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="pregunta_id")
-	private Pregunta pregunta;
+	private Pregunta pregunta;*/
 
 	//Getters and Setters
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getDetalle() {
@@ -48,14 +53,11 @@ public class Respuesta {
 	public void setPuntaje(Long puntaje) {
 		this.puntaje = puntaje;
 	}
-	
-	//second getters 
+	/*second getters 
 	public Pregunta getPregunta() {
 		return pregunta;
 	}
 	public void setPregunta(Pregunta pregunta) {
 		this.pregunta = pregunta;
-	}
-	
-
+	}*/
 }
