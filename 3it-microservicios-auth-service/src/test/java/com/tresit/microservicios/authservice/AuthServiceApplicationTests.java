@@ -1,12 +1,12 @@
-package com.formacionbdi.microservicios.commons;
+package com.tresit.microservicios.authservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-//@SpringBootTest
-class CommonsMicroserviciosApplicationTests {
+@SpringBootTest
+class AuthServiceApplicationTests {
 
-	//@Test
+	@Test
 	void contextLoads() {
 	}
 
