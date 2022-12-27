@@ -1,6 +1,5 @@
 package com.formacionbdi.microservicios.app.estado.controllers;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
@@ -10,10 +9,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.formacionbdi.microservicios.app.estado.models.entity.Estado;
 import com.formacionbdi.microservicios.app.estado.services.EstadoService;
-import com.formacionbdi.microservicios.commons.entrevista.models.entity.Entrevista;
 import com.tresit.microservicios.commons.controllers.CommonController;
+import com.tresit.msrecruitment.commons.clientes.models.entity.Estado;
 
 @RestController
 public class EstadoController extends CommonController<Estado, EstadoService> {
@@ -25,11 +23,12 @@ public class EstadoController extends CommonController<Estado, EstadoService> {
 			return ResponseEntity.notFound().build();
 		}
 		Estado dbEstado = o.get();
-		dbEstado.setCreateAt(estado.getCreateAt());
-		dbEstado.setComentario(estado.getComentario());
+		dbEstado.setNombre(estado.getNombre());
+		//dbEstado.setComentario(estado.getComentario());
 		return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbEstado));
 	}
 
+	/*
 	@PutMapping("/{id}/asignar-entrevistas")
 	public ResponseEntity<?> asignarEntrevistas(@RequestBody List<Entrevista> entrevistas, @PathVariable Long id) {
 		Optional<Estado> o = this.service.findById(id);
@@ -56,4 +55,5 @@ public class EstadoController extends CommonController<Estado, EstadoService> {
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbEstado));
 	}
+	*/
 }

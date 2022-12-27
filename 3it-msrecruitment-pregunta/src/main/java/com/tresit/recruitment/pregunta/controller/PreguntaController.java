@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tresit.msrecruitment.commons.clientes.models.entity.Pregunta;
 //import com.tresit.microservicios.commons.controllers.CommonController;
-import com.tresit.recruitment.pregunta.model.entity.Pregunta;
 import com.tresit.recruitment.pregunta.service.PreguntaService;
 
 @RestController

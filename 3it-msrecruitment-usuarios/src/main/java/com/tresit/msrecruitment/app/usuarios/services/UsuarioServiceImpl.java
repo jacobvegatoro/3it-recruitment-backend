@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tresit.microservicios.commons.services.CommonServiceImpl;
-import com.tresit.msrecruitment.app.usuarios.models.entity.Usuario;
 import com.tresit.msrecruitment.app.usuarios.models.repository.UsuarioRepository;
+import com.tresit.msrecruitment.commons.clientes.models.entity.Usuario;
 
 @Service
 public class UsuarioServiceImpl extends CommonServiceImpl<Usuario, UsuarioRepository> implements UsuarioService {

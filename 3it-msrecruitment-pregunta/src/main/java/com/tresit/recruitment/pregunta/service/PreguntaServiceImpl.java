@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tresit.recruitment.pregunta.model.entity.Pregunta;
+import com.tresit.msrecruitment.commons.clientes.models.entity.Pregunta;
 import com.tresit.recruitment.pregunta.model.repository.PreguntaRepository;
 //import com.tresit.microservicios.commons.services.CommonServiceImpl;
 

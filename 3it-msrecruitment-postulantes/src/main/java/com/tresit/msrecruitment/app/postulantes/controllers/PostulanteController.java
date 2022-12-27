@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tresit.msrecruitment.app.postulantes.models.entity.Postulante;
 import com.tresit.msrecruitment.app.postulantes.services.PostulanteService;
+import com.tresit.msrecruitment.commons.clientes.models.entity.Postulante;
 
 
 @RestController

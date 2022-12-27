@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.formacionbdi.microservicios.app.entrevista.services.EntrevistaService;
-import com.formacionbdi.microservicios.commons.entrevista.models.entity.Entrevista;
 import com.tresit.microservicios.commons.controllers.CommonController;
+import com.tresit.msrecruitment.commons.clientes.models.entity.Entrevista;
 
 @RestController
 public class EntrevistaController extends CommonController<Entrevista, EntrevistaService> {

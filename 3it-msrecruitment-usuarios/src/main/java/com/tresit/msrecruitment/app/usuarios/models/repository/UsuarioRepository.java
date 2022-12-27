@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.tresit.msrecruitment.app.usuarios.models.entity.Usuario;
+import com.tresit.msrecruitment.commons.clientes.models.entity.Usuario;
 
 public interface UsuarioRepository extends PagingAndSortingRepository<Usuario, Long> {
 

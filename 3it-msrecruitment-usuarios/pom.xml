@@ -67,7 +67,14 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-		</dependency>		
+		</dependency>
+
+		<dependency>
+			<groupId>com.tresit.msrecruitment.commons-clientes</groupId>
+			<artifactId>3it-commons-clientes</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
