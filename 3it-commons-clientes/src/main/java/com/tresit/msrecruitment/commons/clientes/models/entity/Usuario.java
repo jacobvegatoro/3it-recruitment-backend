@@ -1,15 +1,9 @@
 package com.tresit.msrecruitment.commons.clientes.models.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,8 +30,10 @@ public class Usuario {
 	private String correo;
 	private String telefono;
 	
+	/*
 	@OneToMany(fetch = FetchType.LAZY)
 	@JsonManagedReference
 	private List <Entrevista> entrevistas;
-
+	*/
+	
 }

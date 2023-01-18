@@ -1,16 +1,10 @@
 package com.tresit.msrecruitment.commons.clientes.models.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,8 +30,9 @@ public class Cliente {
 		
 		private String casaMatriz;		
 
-		@OneToMany(fetch = FetchType.LAZY)
-		@JsonManagedReference
-		private List <Celula> celulas;
+		//@JsonManagedReference
+		//@JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
+		//@OneToMany(fetch = FetchType.LAZY)
+		//private List <Celula> celulas;
 
 }

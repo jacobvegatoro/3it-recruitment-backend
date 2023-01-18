@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,7 @@ import com.tresit.msrecruitment.commons.clientes.models.entity.Usuario;
 
 @RestController
 public class UsuarioController extends CommonController<Usuario, UsuarioService>{
-		
+
 	@PutMapping("/{id}")
 	public ResponseEntity<?> editar(@Valid @RequestBody Usuario usuario, BindingResult result, @PathVariable Long id){
 		
@@ -45,7 +46,20 @@ public class UsuarioController extends CommonController<Usuario, UsuarioService>
 	public ResponseEntity<?> filtrar(@PathVariable String term){
 		return ResponseEntity.ok(service.findByNombreOrApellido(term));
 	}
+	
+	@PostMapping
+	public ResponseEntity<?> crear(@RequestBody Usuario usuario){
+		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(usuario));
+	}
+	
+	@GetMapping("/obtener/{id}")
+	public ResponseEntity<?> obtenerUsuario(@PathVariable Long id){
+		Optional<Usuario> o = service.findById(id);
+		if(o.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(o.get());
 
-
+	}
 
 }

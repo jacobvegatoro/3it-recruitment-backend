@@ -4,19 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.tresit.microservicios.commons.services.CommonService;
 
@@ -45,15 +39,16 @@ public class CommonController<E, S extends CommonService<E>> {
 		return ResponseEntity.ok(o.get());
 	}
 	
-	@PostMapping
-	public ResponseEntity<?> crear(@Valid @RequestBody E entity, BindingResult result){
-		
+	//@PostMapping(value = "/")
+	//@PostMapping(value = "/", consumes = {"application/json"}, produces = {"application/json"}) 
+	//@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	/*public ResponseEntity<?> crear(@Valid @RequestBody E entity, BindingResult result){
 		if(result.hasErrors()) {
 			return this.validar(result);
 		}
 		E entityDb = service.save(entity);
 		return ResponseEntity.status(HttpStatus.CREATED).body(entityDb);
-	}
+	}*/
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> eliminar(@PathVariable Long id){

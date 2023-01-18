@@ -10,17 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tresit.msrecruitment.commons.clientes.models.entity.Pregunta;
 import com.tresit.recruitment.pregunta.model.repository.PreguntaRepository;
-//import com.tresit.microservicios.commons.services.CommonServiceImpl;
 
-/*@Service
-public class PreguntaServiceImpl extends CommonServiceImpl<Pregunta, PreguntaRepository> implements PreguntaService {
-	// 4 @Override methods are already implemented through commons.service impl*/
 @Service
 public class PreguntaServiceImpl implements PreguntaService {
 	
 	@Autowired
-	private 
-	PreguntaRepository repository;
+	private PreguntaRepository repository;
 
 	@Override
 	@Transactional(readOnly=true)
@@ -28,16 +23,9 @@ public class PreguntaServiceImpl implements PreguntaService {
 		return repository.findAll();
 	}
 
-	/*@Override
-	@Transactional(readOnly=true)
-	public Optional<Pregunta> findAll(Pageable pageable) {
-		// TODO Auto-generated method stub
-		return repository.findById(null);
-	}*/
-
 	@Override
 	public Optional<Pregunta> findById(Long id) {
-		return repository.findById(id); //or Optional.empty();?
+		return repository.findById(id); 
 	}
 
 	@Override

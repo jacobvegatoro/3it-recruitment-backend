@@ -1,18 +1,18 @@
 package com.tresit.msrecruitment.commons.clientes.models.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,21 +38,24 @@ public class Celula {
 	//@OneToMany(fetch = FetchType.LAZY)
 	//private List <Cliente> clientes;
 
-	@JsonBackReference
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "cliente_id", nullable = false)
+	@OnDelete(action = OnDeleteAction.NO_ACTION)
+	@JsonIgnore
 	private Cliente cliente;
 
-	@JsonManagedReference
-	@OneToMany(fetch = FetchType.LAZY)
-	private List <Entrevista> entrevistas;
+	//@JsonManagedReference
+	//@JsonIgnore
+	//@OneToMany(fetch = FetchType.LAZY)
+	//private List <Entrevista> entrevistas;
 
-	public void addCliente(Cliente cliente) 
+	/*public void addCliente(Cliente cliente) 
 	{
 		this.cliente = cliente;
 	}
 	
 	public void removeCliente(Cliente cliente) {
 		this.cliente = null;
-	}
+	}*/
 	
 }

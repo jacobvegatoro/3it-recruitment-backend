@@ -42,11 +42,13 @@ public class ClienteController extends CommonController<Cliente, ClienteService>
 		
 	}
 	
+	/*
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> eliminar(@PathVariable Long id){
 		service.deleteById(id);
 		return ResponseEntity.noContent().build();
 	}
+	*/
 	
 	
 

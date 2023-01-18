@@ -31,14 +31,13 @@ public class PostulanteController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<?> ver(@PathVariable Long id){	
+	public ResponseEntity<?> obtener(@PathVariable Long id){	
 		Optional<Postulante> o = service.findById(id);
 		
 		if (o.isEmpty()) {
 			return ResponseEntity.notFound().build();
 		}
 		return ResponseEntity.ok(o.get());
-		
 	}
 	
 	@PostMapping

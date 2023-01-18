@@ -1,16 +1,10 @@
 package com.tresit.msrecruitment.commons.clientes.models.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,7 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Data
-@Table(name="rols")
+@Table(name="roles")
 public class Rol {
 
 	@Id
@@ -33,6 +27,7 @@ public class Rol {
 	
 	private String detalle;
 
+	/*
 	@OneToMany(fetch = FetchType.LAZY)
 	@JsonManagedReference
 	private List <Pregunta> preguntas;
@@ -40,6 +35,7 @@ public class Rol {
 	@OneToMany(fetch = FetchType.LAZY)
 	@JsonManagedReference
 	private List <Entrevista> entrevistas;
+	*/
 
 	/*relation Rol-<Pregunta (aunque al crear un rol, no necesitamos tener todas las preguntas relacionadas a el
 	@JsonIgnoreProperties(value = {"preguntas"}, allowSetters = true)
